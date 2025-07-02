@@ -1,0 +1,36 @@
+*{
+    background: url(img/pem.jpg)no-repeat;
+    background-size: 1400px;
+}
+
+.home{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    background: transparent;
+}
+.you{
+    font-size: 25px;
+    text-align: center;
+    margin: 35px 0px;
+    background: transparent;
+}
+
+.home div{
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+input{
+    background: white;
+    padding: 3px;
+}
+textarea{
+    background: white;
+    padding: 3px;
+}
+
+div{
+    background: transparent;
+    color: orange;
+}
