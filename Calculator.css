@@ -24,9 +24,11 @@
     grid-template-columns: repeat(4, 68px);
 
     background-image: url("img/gambar\ gua.jpg");
-  background-size: contain;
-  background-position: center;
+ background-size: 100% 100%;  /* mengisi seluruh kalkulator pas */
   background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 .nama{
