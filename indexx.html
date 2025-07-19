@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulans Cepat - Panggil Sekarang</title>
+    <style>
+        /* CSS dasar untuk simulasi tampilan wireframe */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ff2b40;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            font-size: 0.9em;
+            color: black;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px; /* Lebar simulasi HP */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .logo {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        .address-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #e9e9e9;
+            position: relative;
+        }
+        .address-box p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #444;
+        }
+        .edit-location {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 0.8em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .call-button {
+            background-color: #dc3545; /* Merah */
+            color: white;
+            padding: 30px 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            text-decoration: none; /* Untuk link */
+            display: block; /* Agar menjadi blok dan bisa diklik */
+        }
+        .call-button:hover {
+            background-color: #c82333;
+        }
+        .quick-triage {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .triage-option {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #333;
+        }
+        .triage-option:hover {
+            background-color: #e9ecef;
+        }
+        .triage-option strong {
+            display: block;
+            margin-top: 5px;
+        }
+        .triage-note {
+            font-size: 0.8em;
+            color: #777;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>14:00</span>
+        <span>[Sinyal] [Baterai]</span>
+    </div>
+
+    <div class="container">
+        <div class="logo">Ambulans Cepat</div>
+        <div class="section-title">Panggilan Darurat</div>
+
+        <div class="address-box">
+            <p>ALAMAT ANDA SAAT INI</p>
+            <p><strong>Jl. Contoh Raya No. 123</strong></p>
+            <p>Jakarta Pusat, Jakarta, Indonesia</p>
+            <a href="#" class="edit-location">Edit Lokasi</a>
+        </div>
+
+        <a href="konfirmasi.html" class="call-button">
+            PANGGIL AMBULANS<br>SEKARANG
+        </a>
+
+        <div class="quick-triage">
+            <div class="triage-option">
+                <span class="icon">&#x1F691;</span> <strong>Kecelakaan</strong>
+            </div>
+            <div class="triage-option">
+                <span class="icon">&#x1F493;</span> <strong>Serangan Jantung</strong>
+            </div>
+            <div class="triage-option">
+                <span class="icon">&#x1F4A8;</span> <strong>Kesulitan Bernapas</strong>
+            </div>
+            <div class="triage-option">
+                <span class="icon">&#x2022;</span> <strong>Lain-lain</strong>
+            </div>
+        </div>
+        <p class="triage-note">Pilih jika memungkinkan (opsional)</p>
+    </div>
+
+    <script>
+        // Contoh sederhana untuk mendapatkan waktu real-time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+            document.querySelector('.header span:first-child').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime(); // Panggil sekali saat dimuat
+    </script>
+</body>
+</html>
