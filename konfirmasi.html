@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulans Cepat - Memproses</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ff2b40;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            font-size: 0.9em;
+            color: black;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+            flex-grow: 1; /* Agar mengisi ruang vertikal */
+            justify-content: center; /* Pusat konten */
+        }
+        .back-button {
+            align-self: flex-start;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .screen-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .loading-icon {
+            font-size: 4em;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message {
+            font-size: 1.1em;
+            margin-top: 15px;
+            color: #333;
+        }
+        .sub-message {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .contact-operator-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin-top: 30px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .contact-operator-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>14:00</span>
+        <span>[Sinyal] [Baterai]</span>
+    </div>
+
+    <div class="container">
+        <a href="indexx.html" class="back-button">&#x2190;</a>
+        <div class="screen-title">Permintaan Ambulans</div>
+
+        <div class="loading-icon">&#x231B;</div> <p class="message">Permintaan Anda sedang diproses.</p>
+        <p class="sub-message">Mohon tunggu. Mencari ambulans terdekat...</p>
+
+        <a href="#" class="contact-operator-button">
+            <span class="icon">&#x260E;</span> Hubungi Operator
+        </a>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+            document.querySelector('.header span:first-child').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Contoh: Setelah 5 detik, otomatis redirect ke layar pelacakan
+        setTimeout(() => {
+            window.location.href = 'pelacakan.html';
+        }, 5000); // 5000 milidetik = 5 detik
+    </script>
+</body>
+</html>
